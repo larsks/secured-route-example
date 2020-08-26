@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    run: darkhttpd
+  name: darkhttpd
+spec:
+  host: darkhttpd-default.apps.cnv.massopen.cloud
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: darkhttpd
+    weight: 100
